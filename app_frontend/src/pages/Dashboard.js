@@ -4,7 +4,6 @@ import { useLanguage } from '../state/LanguageContext';
 import { useProgress } from '../state/ProgressContext';
 import { MODULES } from '../data/content';
 import ModuleCard from '../components/ModuleCard';
-import ProgressBar from '../components/ProgressBar';
 
 // PUBLIC_INTERFACE
 export default function Dashboard() {
@@ -25,7 +24,6 @@ export default function Dashboard() {
         <div className="card pad">
           <div className="muted small">{t('yourProgress')}</div>
           <div className="title" style={{ fontSize: 22, marginTop: 4 }}>{progressPct}%</div>
-          <div style={{ marginTop: 8 }}><ProgressBar value={progressPct} /></div>
         </div>
         <div className="card pad">
           <div className="muted small">Points</div>
