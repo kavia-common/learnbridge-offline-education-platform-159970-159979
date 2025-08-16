@@ -139,6 +139,174 @@ export const QUIZ_CONTENT = {
       ]
     },
 
+    // NEW: Grades 4–5: Fractions - Fractions Basics (frac-q1)
+    'frac-q1': {
+      title: 'Fractions Basics',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Which fraction is equivalent to 1/2?',
+          options: ['2/4', '3/6', '4/8', 'All of the above'],
+          correctIndex: 3,
+          explanation: '2/4, 3/6, and 4/8 all simplify to 1/2.'
+        },
+        {
+          id: 'q2',
+          text: 'Which is greater?',
+          options: ['3/4', '2/3', 'They are equal', 'Cannot tell'],
+          correctIndex: 0,
+          explanation: '3/4 = 0.75, while 2/3 ≈ 0.67.'
+        },
+        {
+          id: 'q3',
+          text: 'How many fourths make a whole?',
+          options: ['2', '3', '4', '8'],
+          correctIndex: 2,
+          explanation: 'Four fourths make one whole (4/4 = 1).'
+        },
+        {
+          id: 'q4',
+          text: '1/3 + 1/3 = ?',
+          options: ['1/6', '2/3', '1/3', '1'],
+          correctIndex: 1,
+          explanation: '1/3 + 1/3 = 2/3.'
+        },
+        {
+          id: 'q5',
+          text: 'Which unit is best to measure the length of a pencil?',
+          options: ['Kilometers', 'Meters', 'Centimeters', 'Milliliters'],
+          correctIndex: 2,
+          explanation: 'Centimeters are appropriate for small lengths.'
+        }
+      ]
+    },
+
+    // NEW: High School: Grade 10 – Algebra II (alg2-q1)
+    'alg2-q1': {
+      title: 'Algebra II Check',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Solve: x^2 − 9 = 0',
+          options: ['x = 3', 'x = −3', 'x = 3 or x = −3', 'No real solution'],
+          correctIndex: 2,
+          explanation: 'x^2 = 9 → x = ±3.'
+        },
+        {
+          id: 'q2',
+          text: 'The vertex of y = (x − 2)^2 + 5 is:',
+          options: ['(−2, 5)', '(2, 5)', '(2, −5)', '(0, 5)'],
+          correctIndex: 1,
+          explanation: 'Vertex form y = (x − h)^2 + k has vertex (h, k).'
+        },
+        {
+          id: 'q3',
+          text: 'Which represents an exponential function?',
+          options: ['y = 2x + 1', 'y = 2^x', 'y = x^2 + 2', 'y = √x'],
+          correctIndex: 1,
+          explanation: 'Exponential: variable x in the exponent.'
+        },
+        {
+          id: 'q4',
+          text: 'Factor: x^2 + 5x + 6',
+          options: ['(x + 1)(x + 6)', '(x + 2)(x + 3)', '(x − 2)(x − 3)', '(x + 2)(x + 6)'],
+          correctIndex: 1,
+          explanation: '2 and 3 multiply to 6 and add to 5.'
+        },
+        {
+          id: 'q5',
+          text: 'Domain of y = √x is:',
+          options: ['All real x', 'x > 0 only', 'x ≥ 0', 'x ≤ 0'],
+          correctIndex: 2,
+          explanation: 'Square root requires x ≥ 0 for real outputs.'
+        }
+      ]
+    },
+
+    // NEW: High School: Grade 11 – Precalculus & Trig (precalc-q1)
+    'precalc-q1': {
+      title: 'Trigonometry Basics',
+      questions: [
+        {
+          id: 'q1',
+          text: 'sin(30°) =',
+          options: ['0', '1/2', '√2/2', '√3/2'],
+          correctIndex: 1,
+          explanation: 'sin(30°) = 1/2.'
+        },
+        {
+          id: 'q2',
+          text: 'cos(0°) =',
+          options: ['0', '1', '−1', 'Undefined'],
+          correctIndex: 1,
+          explanation: 'cos(0°) = 1.'
+        },
+        {
+          id: 'q3',
+          text: 'tan(45°) =',
+          options: ['0', '1', '√2', 'Undefined'],
+          correctIndex: 1,
+          explanation: 'tan(45°) = 1.'
+        },
+        {
+          id: 'q4',
+          text: 'On the unit circle, the coordinates for 90° are:',
+          options: ['(1, 0)', '(0, 1)', '(−1, 0)', '(0, −1)'],
+          correctIndex: 1,
+          explanation: '90° corresponds to (0, 1).'
+        },
+        {
+          id: 'q5',
+          text: 'The period of y = sin(x) is:',
+          options: ['π/2', 'π', '2π', '4π'],
+          correctIndex: 2,
+          explanation: 'The sine function repeats every 2π.'
+        }
+      ]
+    },
+
+    // NEW: High School: Grade 12 – Statistics (stats-q1)
+    'stats-q1': {
+      title: 'Statistics Fundamentals',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Mean of [2, 4, 6, 8] is:',
+          options: ['4', '5', '6', '7'],
+          correctIndex: 1,
+          explanation: '(2 + 4 + 6 + 8) / 4 = 20 / 4 = 5.'
+        },
+        {
+          id: 'q2',
+          text: 'Median of [3, 7, 9, 10, 12] is:',
+          options: ['7', '9', '10', '12'],
+          correctIndex: 1,
+          explanation: 'In an ordered list of 5 values, the 3rd is the median.'
+        },
+        {
+          id: 'q3',
+          text: 'Mode of [1, 2, 2, 3] is:',
+          options: ['1', '2', '3', 'No mode'],
+          correctIndex: 1,
+          explanation: '2 appears most often.'
+        },
+        {
+          id: 'q4',
+          text: 'Probability of heads on a fair coin is:',
+          options: ['0', '1/4', '1/2', '1'],
+          correctIndex: 2,
+          explanation: 'There are two equally likely outcomes; heads = 1/2.'
+        },
+        {
+          id: 'q5',
+          text: 'Which measure reflects spread/variability most directly?',
+          options: ['Mean', 'Median', 'Standard deviation', 'Mode'],
+          correctIndex: 2,
+          explanation: 'Standard deviation measures how spread out values are.'
+        }
+      ]
+    },
+
     // Adult: Literacy - Comprehension Check (alit-q1)
     'alit-q1': {
       title: 'Comprehension Check',
@@ -582,6 +750,174 @@ export const QUIZ_CONTENT = {
           options: ['🟧', '🟨', '🟦', '🟥'],
           correctIndex: 2,
           explanation: 'Alterna azul, rojo; sigue azul.'
+        }
+      ]
+    },
+
+    // NUEVO: Grados 4–5: Fracciones (frac-q1)
+    'frac-q1': {
+      title: 'Conceptos de Fracciones',
+      questions: [
+        {
+          id: 'q1',
+          text: '¿Qué fracción es equivalente a 1/2?',
+          options: ['2/4', '3/6', '4/8', 'Todas las anteriores'],
+          correctIndex: 3,
+          explanation: '2/4, 3/6 y 4/8 se simplifican a 1/2.'
+        },
+        {
+          id: 'q2',
+          text: '¿Cuál es mayor?',
+          options: ['3/4', '2/3', 'Son iguales', 'No se puede saber'],
+          correctIndex: 0,
+          explanation: '3/4 = 0.75 y 2/3 ≈ 0.67.'
+        },
+        {
+          id: 'q3',
+          text: '¿Cuántos cuartos (1/4) hacen un entero?',
+          options: ['2', '3', '4', '8'],
+          correctIndex: 2,
+          explanation: 'Cuatro cuartos hacen 1 (4/4 = 1).'
+        },
+        {
+          id: 'q4',
+          text: '1/3 + 1/3 = ?',
+          options: ['1/6', '2/3', '1/3', '1'],
+          correctIndex: 1,
+          explanation: '1/3 + 1/3 = 2/3.'
+        },
+        {
+          id: 'q5',
+          text: '¿Qué unidad es mejor para medir la longitud de un lápiz?',
+          options: ['Kilómetros', 'Metros', 'Centímetros', 'Mililitros'],
+          correctIndex: 2,
+          explanation: 'Los centímetros son adecuados para longitudes pequeñas.'
+        }
+      ]
+    },
+
+    // NUEVO: Bachillerato: Grado 10 – Álgebra II (alg2-q1)
+    'alg2-q1': {
+      title: 'Repaso de Álgebra II',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Resuelve: x^2 − 9 = 0',
+          options: ['x = 3', 'x = −3', 'x = 3 o x = −3', 'Sin solución real'],
+          correctIndex: 2,
+          explanation: 'x^2 = 9 → x = ±3.'
+        },
+        {
+          id: 'q2',
+          text: 'El vértice de y = (x − 2)^2 + 5 es:',
+          options: ['(−2, 5)', '(2, 5)', '(2, −5)', '(0, 5)'],
+          correctIndex: 1,
+          explanation: 'En y = (x − h)^2 + k el vértice es (h, k).'
+        },
+        {
+          id: 'q3',
+          text: '¿Cuál representa una función exponencial?',
+          options: ['y = 2x + 1', 'y = 2^x', 'y = x^2 + 2', 'y = √x'],
+          correctIndex: 1,
+          explanation: 'Exponencial: la variable x en el exponente.'
+        },
+        {
+          id: 'q4',
+          text: 'Factoriza: x^2 + 5x + 6',
+          options: ['(x + 1)(x + 6)', '(x + 2)(x + 3)', '(x − 2)(x − 3)', '(x + 2)(x + 6)'],
+          correctIndex: 1,
+          explanation: '2 y 3 multiplican 6 y suman 5.'
+        },
+        {
+          id: 'q5',
+          text: 'El dominio de y = √x es:',
+          options: ['Todos los reales', 'x > 0 solamente', 'x ≥ 0', 'x ≤ 0'],
+          correctIndex: 2,
+          explanation: 'La raíz cuadrada requiere x ≥ 0 para salidas reales.'
+        }
+      ]
+    },
+
+    // NUEVO: Bachillerato: Grado 11 – Precálculo y Trigonometría (precalc-q1)
+    'precalc-q1': {
+      title: 'Conceptos de Trigonometría',
+      questions: [
+        {
+          id: 'q1',
+          text: 'sin(30°) =',
+          options: ['0', '1/2', '√2/2', '√3/2'],
+          correctIndex: 1,
+          explanation: 'sin(30°) = 1/2.'
+        },
+        {
+          id: 'q2',
+          text: 'cos(0°) =',
+          options: ['0', '1', '−1', 'Indefinido'],
+          correctIndex: 1,
+          explanation: 'cos(0°) = 1.'
+        },
+        {
+          id: 'q3',
+          text: 'tan(45°) =',
+          options: ['0', '1', '√2', 'Indefinido'],
+          correctIndex: 1,
+          explanation: 'tan(45°) = 1.'
+        },
+        {
+          id: 'q4',
+          text: 'En la circunferencia unitaria, las coordenadas para 90° son:',
+          options: ['(1, 0)', '(0, 1)', '(−1, 0)', '(0, −1)'],
+          correctIndex: 1,
+          explanation: '90° corresponde a (0, 1).'
+        },
+        {
+          id: 'q5',
+          text: 'El período de y = sen(x) es:',
+          options: ['π/2', 'π', '2π', '4π'],
+          correctIndex: 2,
+          explanation: 'La función seno se repite cada 2π.'
+        }
+      ]
+    },
+
+    // NUEVO: Bachillerato: Grado 12 – Estadística (stats-q1)
+    'stats-q1': {
+      title: 'Fundamentos de Estadística',
+      questions: [
+        {
+          id: 'q1',
+          text: 'La media de [2, 4, 6, 8] es:',
+          options: ['4', '5', '6', '7'],
+          correctIndex: 1,
+          explanation: '(2 + 4 + 6 + 8) / 4 = 5.'
+        },
+        {
+          id: 'q2',
+          text: 'La mediana de [3, 7, 9, 10, 12] es:',
+          options: ['7', '9', '10', '12'],
+          correctIndex: 1,
+          explanation: 'En una lista ordenada de 5 valores, el 3.º es la mediana.'
+        },
+        {
+          id: 'q3',
+          text: 'La moda de [1, 2, 2, 3] es:',
+          options: ['1', '2', '3', 'Sin moda'],
+          correctIndex: 1,
+          explanation: '2 es el valor que más se repite.'
+        },
+        {
+          id: 'q4',
+          text: 'La probabilidad de cara en una moneda justa es:',
+          options: ['0', '1/4', '1/2', '1'],
+          correctIndex: 2,
+          explanation: 'Hay dos resultados equiprobables; cara = 1/2.'
+        },
+        {
+          id: 'q5',
+          text: '¿Qué medida refleja más directamente la variabilidad?',
+          options: ['Media', 'Mediana', 'Desviación estándar', 'Moda'],
+          correctIndex: 2,
+          explanation: 'La desviación estándar mide la dispersión de los datos.'
         }
       ]
     },

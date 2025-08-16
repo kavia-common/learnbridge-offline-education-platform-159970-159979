@@ -67,6 +67,19 @@
            { id: 'math-q1', title: 'Count and Add', questions: 5 },
          ],
        },
+       // NEW: Fractions & Measurement for Grades 4–5
+       {
+         id: 'fractions',
+         title: 'Fractions & Measurement',
+         description: 'Fractions, equivalent fractions, and common units of measure.',
+         color: '#ef6c00',
+         gradeLevels: ['4', '5'],
+         lessons: [
+           { id: 'frac_basics', title: 'Understanding Fractions', duration: 14 },
+           { id: 'measure_units', title: 'Measuring Length & Volume', duration: 12 },
+         ],
+         quizzes: [{ id: 'frac-q1', title: 'Fractions Basics', questions: 5 }],
+       },
        {
          id: 'thinking',
          title: 'Critical Thinking',
@@ -104,7 +117,47 @@
          ],
          quizzes: [{ id: 'geo-q1', title: 'Geometry Fundamentals', questions: 4 }],
        },
-       // High School: Grade 10 – Biology
+       // NEW: High School: Grade 10 – Algebra II
+       {
+         id: 'algebra2',
+         title: 'Algebra II',
+         description: 'Quadratics, functions, and exponents.',
+         color: '#d81b60',
+         gradeLevels: ['10'],
+         lessons: [
+           { id: 'quadratics', title: 'Quadratic Equations', duration: 16 },
+           { id: 'functions', title: 'Functions & Graphs', duration: 14 },
+         ],
+         quizzes: [{ id: 'alg2-q1', title: 'Algebra II Check', questions: 5 }],
+       },
+       // NEW: High School: Grade 11 – Precalculus & Trig
+       {
+         id: 'precalculus',
+         title: 'Precalculus & Trigonometry',
+         description: 'Trig ratios, unit circle, and function behavior.',
+         color: '#3949ab',
+         gradeLevels: ['11'],
+         lessons: [
+           { id: 'trig', title: 'Sine, Cosine, and Tangent', duration: 16 },
+           { id: 'unit_circle', title: 'Unit Circle Essentials', duration: 14 },
+         ],
+         quizzes: [{ id: 'precalc-q1', title: 'Trigonometry Basics', questions: 5 }],
+       },
+       // NEW: High School: Grade 12 – Statistics & Probability
+       {
+         id: 'statistics',
+         title: 'Statistics & Probability',
+         description: 'Mean, median, variability, and simple probability.',
+         color: '#00796b',
+         gradeLevels: ['12'],
+         lessons: [
+           { id: 'descriptive', title: 'Descriptive Statistics', duration: 14 },
+           { id: 'prob', title: 'Basic Probability', duration: 14 },
+         ],
+         quizzes: [{ id: 'stats-q1', title: 'Statistics Fundamentals', questions: 5 }],
+       },
+
+       // High School: Grade 10 – Biology (non-math, retained)
        {
          id: 'biology',
          title: 'Biology',
@@ -117,7 +170,7 @@
          ],
          quizzes: [{ id: 'bio-q1', title: 'Introduction to Biology', questions: 4 }],
        },
-       // High School: Grade 11 – English Literature
+       // High School: Grade 11 – English Literature (non-math, retained)
        {
          id: 'literature_hs',
          title: 'English Literature & Composition',
@@ -130,7 +183,7 @@
          ],
          quizzes: [{ id: 'englit-q1', title: 'Literature & Composition Basics', questions: 4 }],
        },
-       // High School: Grade 12 – Social Studies/History
+       // High School: Grade 12 – Social Studies/History (non-math, retained)
        {
          id: 'history',
          title: 'Social Studies & History',
@@ -208,6 +261,19 @@
          ],
          quizzes: [{ id: 'math-q1', title: 'Cuenta y Suma', questions: 5 }],
        },
+       // NUEVO: Fracciones y Medición para 4–5
+       {
+         id: 'fractions',
+         title: 'Fracciones y Medición',
+         description: 'Fracciones, equivalencias y unidades de medida comunes.',
+         color: '#ef6c00',
+         gradeLevels: ['4', '5'],
+         lessons: [
+           { id: 'frac_basics', title: 'Entender las fracciones', duration: 14 },
+           { id: 'measure_units', title: 'Medir longitud y volumen', duration: 12 },
+         ],
+         quizzes: [{ id: 'frac-q1', title: 'Conceptos de Fracciones', questions: 5 }],
+       },
        {
          id: 'thinking',
          title: 'Pensamiento Crítico',
@@ -243,7 +309,47 @@
          ],
          quizzes: [{ id: 'geo-q1', title: 'Fundamentos de Geometría', questions: 4 }],
        },
-       // Bachillerato: Grado 10 – Biología
+       // NUEVO: Bachillerato: Grado 10 – Álgebra II
+       {
+         id: 'algebra2',
+         title: 'Álgebra II',
+         description: 'Cuadráticas, funciones y exponentes.',
+         color: '#d81b60',
+         gradeLevels: ['10'],
+         lessons: [
+           { id: 'quadratics', title: 'Ecuaciones cuadráticas', duration: 16 },
+           { id: 'functions', title: 'Funciones y gráficas', duration: 14 },
+         ],
+         quizzes: [{ id: 'alg2-q1', title: 'Repaso de Álgebra II', questions: 5 }],
+       },
+       // NUEVO: Bachillerato: Grado 11 – Precálculo y Trigonometría
+       {
+         id: 'precalculus',
+         title: 'Precálculo y Trigonometría',
+         description: 'Razones trigonométricas, circunferencia unitaria y funciones.',
+         color: '#3949ab',
+         gradeLevels: ['11'],
+         lessons: [
+           { id: 'trig', title: 'Seno, coseno y tangente', duration: 16 },
+           { id: 'unit_circle', title: 'Esenciales de la circunferencia unitaria', duration: 14 },
+         ],
+         quizzes: [{ id: 'precalc-q1', title: 'Conceptos de Trigonometría', questions: 5 }],
+       },
+       // NUEVO: Bachillerato: Grado 12 – Estadística y Probabilidad
+       {
+         id: 'statistics',
+         title: 'Estadística y Probabilidad',
+         description: 'Media, mediana, variabilidad y probabilidad simple.',
+         color: '#00796b',
+         gradeLevels: ['12'],
+         lessons: [
+           { id: 'descriptive', title: 'Estadística Descriptiva', duration: 14 },
+           { id: 'prob', title: 'Probabilidad básica', duration: 14 },
+         ],
+         quizzes: [{ id: 'stats-q1', title: 'Fundamentos de Estadística', questions: 5 }],
+       },
+
+       // Bachillerato: Grado 10 – Biología (no matemáticas, mantenido)
        {
          id: 'biology',
          title: 'Biología',
@@ -256,7 +362,7 @@
          ],
          quizzes: [{ id: 'bio-q1', title: 'Introducción a la Biología', questions: 4 }],
        },
-       // Bachillerato: Grado 11 – Literatura/Redacción
+       // Bachillerato: Grado 11 – Literatura/Redacción (no matemáticas, mantenido)
        {
          id: 'literature_hs',
          title: 'Literatura y Composición',
@@ -269,7 +375,7 @@
          ],
          quizzes: [{ id: 'englit-q1', title: 'Conceptos de Literatura y Composición', questions: 4 }],
        },
-       // Bachillerato: Grado 12 – Estudios Sociales/Historia
+       // Bachillerato: Grado 12 – Estudios Sociales/Historia (no matemáticas, mantenido)
        {
          id: 'history',
          title: 'Estudios Sociales e Historia',
