@@ -13,10 +13,10 @@ export default function Settings() {
 
   const handleAgeChange = (e) => {
     const newAge = e.target.value;
-    // When switching to adult, force grade to 'adult'; when switching to child from adult, default to 'k' if needed.
+    // When switching to adult, force grade to 'adult'; when switching to child from adult, default to '1' if needed.
     const newGrade = newAge === 'adult'
       ? 'adult'
-      : (user.gradeLevel === 'adult' ? 'k' : (user.gradeLevel || 'k'));
+      : (user.gradeLevel === 'adult' ? '1' : (user.gradeLevel || '1'));
     const updated = { ...user, ageGroup: newAge, gradeLevel: newGrade };
     register(updated);
   };
@@ -61,7 +61,7 @@ export default function Settings() {
           <div className="label">Grade Level</div>
           <select
             className="select"
-            value={user.gradeLevel || (isAdult ? 'adult' : 'k')}
+            value={user.gradeLevel || (isAdult ? 'adult' : '1')}
             onChange={handleGradeChange}
             aria-label="Select grade level"
             disabled={isAdult}

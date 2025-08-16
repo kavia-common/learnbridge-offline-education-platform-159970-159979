@@ -16,13 +16,20 @@
  ];
 
  // PUBLIC_INTERFACE
+ // Updated to support Grades 1 through 12, plus Adult.
  export const GRADE_LEVELS = [
-   { code: 'k', name: 'Kindergarten' },
    { code: '1', name: 'Grade 1' },
    { code: '2', name: 'Grade 2' },
    { code: '3', name: 'Grade 3' },
    { code: '4', name: 'Grade 4' },
    { code: '5', name: 'Grade 5' },
+   { code: '6', name: 'Grade 6' },
+   { code: '7', name: 'Grade 7' },
+   { code: '8', name: 'Grade 8' },
+   { code: '9', name: 'Grade 9' },
+   { code: '10', name: 'Grade 10' },
+   { code: '11', name: 'Grade 11' },
+   { code: '12', name: 'Grade 12' },
    // For adult content, grade level is not applicable but represented here for consistency.
    { code: 'adult', name: 'Adult' },
  ];
@@ -36,7 +43,8 @@
          title: 'Literacy',
          description: 'Learn letters, sounds, and words.',
          color: '#1976d2',
-         gradeLevels: ['k', '1', '2'],
+         // Kindergarten removed; starts at Grade 1
+         gradeLevels: ['1', '2'],
          lessons: [
            { id: 'letters', title: 'Letters A-M', duration: 10 },
            { id: 'sounds', title: 'Sounds and Rhymes', duration: 12 },
@@ -50,7 +58,8 @@
          title: 'Math',
          description: 'Numbers, counting, and basic operations.',
          color: '#43a047',
-         gradeLevels: ['k', '1', '2', '3'],
+         // Kindergarten removed; Grades 1–3
+         gradeLevels: ['1', '2', '3'],
          lessons: [
            { id: 'numbers', title: 'Numbers 1-20', duration: 10 },
            { id: 'add', title: 'Adding with Dots', duration: 12 },
@@ -69,6 +78,19 @@
            { id: 'patterns', title: 'Find the Pattern', duration: 8 },
          ],
          quizzes: [{ id: 'think-q1', title: 'Puzzle Time', questions: 4 }],
+       },
+       // New: Upper-grade demonstration module
+       {
+         id: 'algebra',
+         title: 'Algebra Foundations',
+         description: 'Linear equations, expressions, and problem solving.',
+         color: '#8e24aa',
+         gradeLevels: ['9', '10', '11', '12'],
+         lessons: [
+           { id: 'lin_eq', title: 'Solving Linear Equations', duration: 15 },
+           { id: 'expr', title: 'Simplifying Expressions', duration: 12 },
+         ],
+         quizzes: [{ id: 'alg-q1', title: 'Algebra Basics', questions: 3 }],
        },
      ],
      adult: [
@@ -116,7 +138,7 @@
          title: 'Alfabetización',
          description: 'Aprende letras, sonidos y palabras.',
          color: '#1976d2',
-         gradeLevels: ['k', '1', '2'],
+         gradeLevels: ['1', '2'],
          lessons: [
            { id: 'letters', title: 'Letras A-M', duration: 10 },
            { id: 'sounds', title: 'Sonidos y Rimas', duration: 12 },
@@ -128,7 +150,7 @@
          title: 'Matemáticas',
          description: 'Números, conteo y operaciones básicas.',
          color: '#43a047',
-         gradeLevels: ['k', '1', '2', '3'],
+         gradeLevels: ['1', '2', '3'],
          lessons: [
            { id: 'numbers', title: 'Números 1-20', duration: 10 },
            { id: 'add', title: 'Sumar con puntos', duration: 12 },
@@ -143,6 +165,19 @@
          gradeLevels: ['1', '2', '3', '4'],
          lessons: [{ id: 'patterns', title: 'Encuentra el patrón', duration: 8 }],
          quizzes: [{ id: 'think-q1', title: 'Hora de acertijos', questions: 4 }],
+       },
+       // Nuevo: Módulo para grados superiores
+       {
+         id: 'algebra',
+         title: 'Fundamentos de Álgebra',
+         description: 'Ecuaciones lineales, expresiones y resolución de problemas.',
+         color: '#8e24aa',
+         gradeLevels: ['9', '10', '11', '12'],
+         lessons: [
+           { id: 'lin_eq', title: 'Resolver ecuaciones lineales', duration: 15 },
+           { id: 'expr', title: 'Simplificar expresiones', duration: 12 },
+         ],
+         quizzes: [{ id: 'alg-q1', title: 'Conceptos básicos de Álgebra', questions: 3 }],
        },
      ],
      adult: [
