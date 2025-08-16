@@ -1,26 +1,42 @@
 import React from 'react';
 import { useAuth } from '../state/AuthContext';
 import { useLanguage } from '../state/LanguageContext';
-import { AGE_GROUPS, LANGUAGES } from '../data/content';
+import { AGE_GROUPS, LANGUAGES, GRADE_LEVELS } from '../data/content';
 
 // PUBLIC_INTERFACE
 export default function Settings() {
-  /** Settings page for language and age group preferences. */
+  /** Settings page for language, age group, and grade level preferences. */
   const { user, register } = useAuth();
   const { language, setLanguage } = useLanguage();
 
   if (!user) return null;
 
   const handleAgeChange = (e) => {
-    const updated = { ...user, ageGroup: e.target.value };
+    const newAge = e.target.value;
+    // When switching to adult, force grade to 'adult'; when switching to child from adult, default to 'k' if needed.
+    const newGrade = newAge === 'adult'
+      ? 'adult'
+      : (user.gradeLevel === 'adult' ? 'k' : (user.gradeLevel || 'k'));
+    const updated = { ...user, ageGroup: newAge, gradeLevel: newGrade };
     register(updated);
   };
 
   const handleLangChange = (e) => {
-    setLanguage(e.target.value);
-    const updated = { ...user, language: e.target.value };
+    const code = e.target.value;
+    setLanguage(code);
+    const updated = { ...user, language: code };
     register(updated);
   };
+
+  const handleGradeChange = (e) => {
+    const updated = { ...user, gradeLevel: e.target.value };
+    register(updated);
+  };
+
+  const isAdult = user.ageGroup === 'adult';
+  const gradeOptions = isAdult
+    ? GRADE_LEVELS.filter(g => g.code === 'adult')
+    : GRADE_LEVELS.filter(g => g.code !== 'adult');
 
   return (
     <div className="card pad">
@@ -39,6 +55,28 @@ export default function Settings() {
           </select>
         </div>
       </div>
+
+      <div className="grid" style={{ marginTop: 12 }}>
+        <div>
+          <div className="label">Grade Level</div>
+          <select
+            className="select"
+            value={user.gradeLevel || (isAdult ? 'adult' : 'k')}
+            onChange={handleGradeChange}
+            aria-label="Select grade level"
+            disabled={isAdult}
+            title={isAdult ? 'Grade level does not apply to Adult content' : 'Select your grade level'}
+          >
+            {gradeOptions.map(g => <option key={g.code} value={g.code}>{g.name}</option>)}
+          </select>
+          {isAdult && (
+            <div className="small muted" style={{ marginTop: 6 }}>
+              Grade level applies to child content only.
+            </div>
+          )}
+        </div>
+      </div>
+
       <div style={{ marginTop: 16 }}>
         <span className="muted small" aria-live="polite">Theme can be toggled from the top bar.</span>
       </div>

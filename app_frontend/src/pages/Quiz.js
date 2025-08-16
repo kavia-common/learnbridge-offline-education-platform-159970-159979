@@ -18,7 +18,12 @@ export default function Quiz() {
 
   const language = user?.language || 'en';
   const module = useMemo(() => {
-    const list = MODULES[language]?.[user?.ageGroup || 'child'] || [];
+    const ageGroup = user?.ageGroup || 'child';
+    const gradeLevel = user?.gradeLevel || (ageGroup === 'adult' ? 'adult' : 'k');
+    const base = MODULES[language]?.[ageGroup] || [];
+    const list = ageGroup === 'child'
+      ? base.filter(m => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))
+      : base;
     return list.find((m) => m.id === moduleId);
   }, [language, user, moduleId]);
 

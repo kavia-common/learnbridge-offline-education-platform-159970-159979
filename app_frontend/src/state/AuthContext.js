@@ -15,13 +15,26 @@ export function AuthProvider({ children }) {
 
   const login = (name) => {
     const existing = getItem('user', null);
-    const u = existing || { name, ageGroup: 'child', language: 'en', createdAt: Date.now() };
+    // Default profile for new users, including gradeLevel for child content.
+    const u = existing || { name, ageGroup: 'child', gradeLevel: 'k', language: 'en', createdAt: Date.now() };
     setItem('user', u);
     setUser(u);
   };
 
   const register = (profile) => {
-    const u = { ...profile, createdAt: Date.now() };
+    // Ensure sensible defaults for gradeLevel if not provided.
+    const computedGrade =
+      profile?.ageGroup === 'adult'
+        ? 'adult'
+        : (profile?.gradeLevel && profile.gradeLevel !== 'adult' ? profile.gradeLevel : 'k');
+
+    const u = {
+      name: profile.name ?? user?.name ?? '',
+      ageGroup: profile.ageGroup ?? user?.ageGroup ?? 'child',
+      language: profile.language ?? user?.language ?? 'en',
+      gradeLevel: profile.gradeLevel ?? user?.gradeLevel ?? computedGrade,
+      createdAt: Date.now(),
+    };
     setItem('user', u);
     setUser(u);
   };

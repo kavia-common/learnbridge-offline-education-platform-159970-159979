@@ -10,7 +10,13 @@ export default function Dashboard() {
   const { user } = useAuth();
   const { t } = useLanguage();
 
-  const modules = MODULES[user.language || 'en']?.[user.ageGroup || 'child'] || [];
+  const language = user.language || 'en';
+  const ageGroup = user.ageGroup || 'child';
+  const gradeLevel = user.gradeLevel || (ageGroup === 'adult' ? 'adult' : 'k');
+  const base = MODULES[language]?.[ageGroup] || [];
+  const modules = ageGroup === 'child'
+    ? base.filter(m => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))
+    : base;
 
   return (
     <div className="grid" style={{ gap: 16 }}>

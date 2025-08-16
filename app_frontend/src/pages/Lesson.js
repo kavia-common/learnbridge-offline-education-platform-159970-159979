@@ -10,7 +10,13 @@ export default function Lesson() {
   const { user } = useAuth();
 
   const module = useMemo(() => {
-    const list = MODULES[user.language || 'en']?.[user.ageGroup || 'child'] || [];
+    const language = user.language || 'en';
+    const ageGroup = user.ageGroup || 'child';
+    const gradeLevel = user.gradeLevel || (ageGroup === 'adult' ? 'adult' : 'k');
+    const base = MODULES[language]?.[ageGroup] || [];
+    const list = ageGroup === 'child'
+      ? base.filter(m => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))
+      : base;
     return list.find(m => m.id === moduleId);
   }, [moduleId, user]);
 
