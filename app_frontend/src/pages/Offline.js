@@ -30,7 +30,7 @@ export default function Offline() {
         </button>
       </div>
       <div className="muted small" style={{ marginTop: 10 }}>
-        This app works offline. Your progress is saved locally and can be synced when connectivity is available.
+        This app works offline. Content and settings can be synced when connectivity is available.
       </div>
     </div>
   );

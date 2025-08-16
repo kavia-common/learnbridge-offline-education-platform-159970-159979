@@ -2,7 +2,6 @@ import React from 'react';
 import { useAuth } from '../state/AuthContext';
 import { useLanguage } from '../state/LanguageContext';
 import { AGE_GROUPS, LANGUAGES } from '../data/content';
-import { setItem } from '../utils/storage';
 
 // PUBLIC_INTERFACE
 export default function Settings() {
@@ -23,15 +22,6 @@ export default function Settings() {
     register(updated);
   };
 
-  const clearOffline = () => {
-    // Clear progress offline data
-    setItem('progress', {});
-    setItem('badges', []);
-    setItem('totalPoints', 0);
-    // leave user and language intact
-    window.alert('Offline progress cleared.');
-  };
-
   return (
     <div className="card pad">
       <div className="title" style={{ fontSize: 20 }}>Settings</div>
@@ -49,8 +39,7 @@ export default function Settings() {
           </select>
         </div>
       </div>
-      <div style={{ marginTop: 16, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        <button className="btn" onClick={clearOffline}>Clear Offline Progress</button>
+      <div style={{ marginTop: 16 }}>
         <span className="muted small" aria-live="polite">Theme can be toggled from the top bar.</span>
       </div>
     </div>

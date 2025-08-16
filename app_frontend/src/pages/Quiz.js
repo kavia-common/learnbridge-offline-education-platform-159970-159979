@@ -3,21 +3,18 @@ import { Link, useParams } from 'react-router-dom';
 import { useAuth } from '../state/AuthContext';
 import { MODULES } from '../data/content';
 import { QUIZ_CONTENT } from '../data/quizzes';
-import { useProgress } from '../state/ProgressContext';
 
 // PUBLIC_INTERFACE
 export default function Quiz() {
   /**
-   * Interactive Quiz page:
+   * Interactive Quiz page (no progress persistence):
    * - Loads questions from QUIZ_CONTENT based on language and quizId
    * - Renders single-choice questions with options
    * - Requires answers for all questions before submit
    * - Calculates score and provides per-question feedback
-   * - On completion, records score using progress context for rewards/points
    */
   const { moduleId, quizId } = useParams();
   const { user } = useAuth();
-  const { recordQuizScore } = useProgress();
 
   const language = user?.language || 'en';
   const module = useMemo(() => {
@@ -77,8 +74,6 @@ export default function Quiz() {
     const g = grade();
     setResult(g);
     setSubmitted(true);
-    // Update progress and award points
-    recordQuizScore(moduleId, quizId, g.percent);
   };
 
   const retry = () => {
@@ -188,9 +183,6 @@ export default function Quiz() {
             <div className="card pad" role="status" aria-live="polite" style={{ display: 'grid', gap: 8 }}>
               <div className="title" style={{ fontSize: 16 }}>
                 Your Score: {result.correct}/{result.total} ({result.percent}%)
-              </div>
-              <div className="muted small">
-                Points awarded equal your percentage score. Great job!
               </div>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 4 }}>
                 <button type="button" className="btn" onClick={retry}>

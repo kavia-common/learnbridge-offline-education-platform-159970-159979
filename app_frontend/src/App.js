@@ -4,7 +4,6 @@ import './App.css';
 
 import { AuthProvider, useAuth } from './state/AuthContext';
 import { LanguageProvider } from './state/LanguageContext';
-import { ProgressProvider, useProgress } from './state/ProgressContext';
 
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Auth/Login';
@@ -13,7 +12,6 @@ import Modules from './pages/Modules';
 import Lesson from './pages/Lesson';
 import Quiz from './pages/Quiz';
 import Profile from './pages/Profile';
-import Achievements from './pages/Achievements';
 import Settings from './pages/Settings';
 import Offline from './pages/Offline';
 
@@ -29,7 +27,6 @@ function ProtectedRoute({ children }) {
 function Sidebar() {
   /** App sidebar with navigation. */
   const { user, logout } = useAuth();
-  const { totalPoints } = useProgress();
 
   return (
     <aside className="sidebar">
@@ -40,7 +37,6 @@ function Sidebar() {
       <nav className="nav" aria-label="Main Navigation">
         <NavLink to="/" end>🏠 Dashboard</NavLink>
         <NavLink to="/modules">📚 Modules</NavLink>
-        <NavLink to="/achievements">🏆 Achievements</NavLink>
         <NavLink to="/profile">👤 Profile</NavLink>
         <NavLink to="/offline">📡 Offline</NavLink>
         <NavLink to="/settings">⚙️ Settings</NavLink>
@@ -50,9 +46,6 @@ function Sidebar() {
         {user && (
           <div className="card pad">
             <div className="title" style={{fontSize: 14}}>Hi, {user.name}</div>
-            <div className="muted small" style={{marginTop: 6}}>
-              Points: <strong>{totalPoints}</strong>
-            </div>
           </div>
         )}
         {user ? (
@@ -106,7 +99,6 @@ function AppShell() {
       <Route path="/modules/:moduleId/lesson/:lessonId" element={<ProtectedRoute><Lesson /></ProtectedRoute>} />
       <Route path="/modules/:moduleId/quiz/:quizId" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
       <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-      <Route path="/achievements" element={<ProtectedRoute><Achievements /></ProtectedRoute>} />
       <Route path="/offline" element={<ProtectedRoute><Offline /></ProtectedRoute>} />
       <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" replace />} />
@@ -132,11 +124,9 @@ function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
-        <ProgressProvider>
-          <BrowserRouter>
-            <AppShell />
-          </BrowserRouter>
-        </ProgressProvider>
+        <BrowserRouter>
+          <AppShell />
+        </BrowserRouter>
       </AuthProvider>
     </LanguageProvider>
   );
