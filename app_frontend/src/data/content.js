@@ -43,7 +43,7 @@
          title: 'Literacy',
          description: 'Learn letters, sounds, and words.',
          color: '#1976d2',
-         // Kindergarten removed; starts at Grade 1
+         // Starts at Grade 1
          gradeLevels: ['1', '2'],
          lessons: [
            { id: 'letters', title: 'Letters A-M', duration: 10 },
@@ -58,7 +58,6 @@
          title: 'Math',
          description: 'Numbers, counting, and basic operations.',
          color: '#43a047',
-         // Kindergarten removed; Grades 1–3
          gradeLevels: ['1', '2', '3'],
          lessons: [
            { id: 'numbers', title: 'Numbers 1-20', duration: 10 },
@@ -79,18 +78,70 @@
          ],
          quizzes: [{ id: 'think-q1', title: 'Puzzle Time', questions: 4 }],
        },
-       // New: Upper-grade demonstration module
+       // Upper Middle School: Algebra Foundations (Grades 6–8)
        {
          id: 'algebra',
          title: 'Algebra Foundations',
          description: 'Linear equations, expressions, and problem solving.',
          color: '#8e24aa',
-         gradeLevels: ['9', '10', '11', '12'],
+         gradeLevels: ['6', '7', '8'],
          lessons: [
            { id: 'lin_eq', title: 'Solving Linear Equations', duration: 15 },
            { id: 'expr', title: 'Simplifying Expressions', duration: 12 },
          ],
          quizzes: [{ id: 'alg-q1', title: 'Algebra Basics', questions: 3 }],
+       },
+       // High School: Grade 9 – Geometry
+       {
+         id: 'geometry',
+         title: 'Geometry',
+         description: 'Triangles, circles, and basic proofs.',
+         color: '#26a69a',
+         gradeLevels: ['9'],
+         lessons: [
+           { id: 'triangles', title: 'Triangles and Angles', duration: 16 },
+           { id: 'circles', title: 'Circles and Arcs', duration: 14 },
+         ],
+         quizzes: [{ id: 'geo-q1', title: 'Geometry Fundamentals', questions: 4 }],
+       },
+       // High School: Grade 10 – Biology
+       {
+         id: 'biology',
+         title: 'Biology',
+         description: 'Cells, genetics, and living systems.',
+         color: '#2e7d32',
+         gradeLevels: ['10'],
+         lessons: [
+           { id: 'cells', title: 'Cells and Organelles', duration: 15 },
+           { id: 'genetics', title: 'DNA and Inheritance', duration: 16 },
+         ],
+         quizzes: [{ id: 'bio-q1', title: 'Introduction to Biology', questions: 4 }],
+       },
+       // High School: Grade 11 – English Literature
+       {
+         id: 'literature_hs',
+         title: 'English Literature & Composition',
+         description: 'Reading, analysis, and effective writing.',
+         color: '#5e35b1',
+         gradeLevels: ['11'],
+         lessons: [
+           { id: 'poetry', title: 'Reading Poetry', duration: 14 },
+           { id: 'analysis', title: 'Close Reading & Analysis', duration: 15 },
+         ],
+         quizzes: [{ id: 'englit-q1', title: 'Literature & Composition Basics', questions: 4 }],
+       },
+       // High School: Grade 12 – Social Studies/History
+       {
+         id: 'history',
+         title: 'Social Studies & History',
+         description: 'Civics, sources, and major global events.',
+         color: '#8d6e63',
+         gradeLevels: ['12'],
+         lessons: [
+           { id: 'civics', title: 'Civics & Government', duration: 14 },
+           { id: 'events', title: 'Major 20th Century Events', duration: 16 },
+         ],
+         quizzes: [{ id: 'hist-q1', title: 'History & Civics Overview', questions: 4 }],
        },
      ],
      adult: [
@@ -166,18 +217,70 @@
          lessons: [{ id: 'patterns', title: 'Encuentra el patrón', duration: 8 }],
          quizzes: [{ id: 'think-q1', title: 'Hora de acertijos', questions: 4 }],
        },
-       // Nuevo: Módulo para grados superiores
+       // Secundaria baja: Fundamentos de Álgebra (Grados 6–8)
        {
          id: 'algebra',
          title: 'Fundamentos de Álgebra',
          description: 'Ecuaciones lineales, expresiones y resolución de problemas.',
          color: '#8e24aa',
-         gradeLevels: ['9', '10', '11', '12'],
+         gradeLevels: ['6', '7', '8'],
          lessons: [
            { id: 'lin_eq', title: 'Resolver ecuaciones lineales', duration: 15 },
            { id: 'expr', title: 'Simplificar expresiones', duration: 12 },
          ],
          quizzes: [{ id: 'alg-q1', title: 'Conceptos básicos de Álgebra', questions: 3 }],
+       },
+       // Bachillerato: Grado 9 – Geometría
+       {
+         id: 'geometry',
+         title: 'Geometría',
+         description: 'Triángulos, círculos y pruebas básicas.',
+         color: '#26a69a',
+         gradeLevels: ['9'],
+         lessons: [
+           { id: 'triangles', title: 'Triángulos y ángulos', duration: 16 },
+           { id: 'circles', title: 'Círculos y arcos', duration: 14 },
+         ],
+         quizzes: [{ id: 'geo-q1', title: 'Fundamentos de Geometría', questions: 4 }],
+       },
+       // Bachillerato: Grado 10 – Biología
+       {
+         id: 'biology',
+         title: 'Biología',
+         description: 'Células, genética y sistemas vivos.',
+         color: '#2e7d32',
+         gradeLevels: ['10'],
+         lessons: [
+           { id: 'cells', title: 'Células y orgánulos', duration: 15 },
+           { id: 'genetics', title: 'ADN y herencia', duration: 16 },
+         ],
+         quizzes: [{ id: 'bio-q1', title: 'Introducción a la Biología', questions: 4 }],
+       },
+       // Bachillerato: Grado 11 – Literatura/Redacción
+       {
+         id: 'literature_hs',
+         title: 'Literatura y Composición',
+         description: 'Lectura, análisis y escritura efectiva.',
+         color: '#5e35b1',
+         gradeLevels: ['11'],
+         lessons: [
+           { id: 'poetry', title: 'Lectura de poesía', duration: 14 },
+           { id: 'analysis', title: 'Lectura y análisis detallado', duration: 15 },
+         ],
+         quizzes: [{ id: 'englit-q1', title: 'Conceptos de Literatura y Composición', questions: 4 }],
+       },
+       // Bachillerato: Grado 12 – Estudios Sociales/Historia
+       {
+         id: 'history',
+         title: 'Estudios Sociales e Historia',
+         description: 'Cívica, fuentes y eventos globales clave.',
+         color: '#8d6e63',
+         gradeLevels: ['12'],
+         lessons: [
+           { id: 'civics', title: 'Cívica y Gobierno', duration: 14 },
+           { id: 'events', title: 'Grandes eventos del siglo XX', duration: 16 },
+         ],
+         quizzes: [{ id: 'hist-q1', title: 'Resumen de Historia y Cívica', questions: 4 }],
        },
      ],
      adult: [

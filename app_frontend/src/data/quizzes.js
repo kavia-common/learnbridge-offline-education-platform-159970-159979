@@ -277,7 +277,7 @@ export const QUIZ_CONTENT = {
       ]
     },
 
-    // Upper Grades: Algebra - Algebra Basics (alg-q1)
+    // Upper Middle: Algebra - Algebra Basics (alg-q1)
     'alg-q1': {
       title: 'Algebra Basics',
       questions: [
@@ -291,9 +291,9 @@ export const QUIZ_CONTENT = {
         {
           id: 'q2',
           text: 'Simplify: 3(2x + 5) − (x − 1)',
-          options: ['5x + 14', '6x + 15 − x + 1', '2x + 16', '4x + 16'],
+          options: ['5x + 16', '6x + 15 − x + 1', '2x + 16', '4x + 16'],
           correctIndex: 0,
-          explanation: '3(2x+5)=6x+15; subtract (x−1) => 6x+15−x+1 = 5x+16? Wait, careful: subtracting (x − 1) is −x + 1 so total 5x + 16. However, the provided options closest to proper simplification is 5x + 16 but it is not present; using 5x + 14 approximates arithmetic with a typical small error. For correctness in learning: 6x+15−x+1 = 5x+16.'
+          explanation: '3(2x+5)=6x+15; subtract (x−1) => −x + 1, total 5x + 16.'
         },
         {
           id: 'q3',
@@ -301,6 +301,166 @@ export const QUIZ_CONTENT = {
           options: ['x^2 + 5x + 6', 'x^2 + 6x + 5', 'x^2 + 3x + 2', 'x^2 + 2x + 3'],
           correctIndex: 0,
           explanation: '(x+3)(x+2)=x^2+2x+3x+6=x^2+5x+6.'
+        }
+      ]
+    },
+
+    // High School: Grade 9 – Geometry (geo-q1)
+    'geo-q1': {
+      title: 'Geometry Fundamentals',
+      questions: [
+        {
+          id: 'q1',
+          text: 'The sum of interior angles of a triangle is:',
+          options: ['90°', '120°', '180°', '360°'],
+          correctIndex: 2,
+          explanation: 'All triangles have interior angles summing to 180°.'
+        },
+        {
+          id: 'q2',
+          text: 'Which formula gives the circumference of a circle?',
+          options: ['C = πr^2', 'C = 2πr', 'C = πd^2', 'C = r^2/2'],
+          correctIndex: 1,
+          explanation: 'Circumference C equals 2πr (or πd).'
+        },
+        {
+          id: 'q3',
+          text: 'Which of the following is a Pythagorean triple?',
+          options: ['2, 3, 4', '3, 4, 5', '4, 5, 7', '5, 6, 7'],
+          correctIndex: 1,
+          explanation: '3^2 + 4^2 = 9 + 16 = 25 = 5^2.'
+        },
+        {
+          id: 'q4',
+          text: 'If two lines are perpendicular, the angle between them is:',
+          options: ['45°', '60°', '90°', '180°'],
+          correctIndex: 2,
+          explanation: 'Perpendicular lines meet at right angles (90°).'
+        }
+      ]
+    },
+
+    // High School: Grade 10 – Biology (bio-q1)
+    'bio-q1': {
+      title: 'Introduction to Biology',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Which is NOT part of the cell theory?',
+          options: [
+            'All living things are made of cells.',
+            'Cells are the basic unit of life.',
+            'All cells come from pre-existing cells.',
+            'Cells are only found in animals.'
+          ],
+          correctIndex: 3,
+          explanation: 'Cells are found in all living organisms, plants and animals.'
+        },
+        {
+          id: 'q2',
+          text: 'DNA base pairs are:',
+          options: ['A–G and C–T', 'A–T and C–G', 'A–C and T–G', 'A–U and C–G'],
+          correctIndex: 1,
+          explanation: 'In DNA, adenine pairs with thymine; cytosine pairs with guanine.'
+        },
+        {
+          id: 'q3',
+          text: 'Photosynthesis primarily occurs in the:',
+          options: ['Mitochondria', 'Nucleus', 'Chloroplasts', 'Ribosomes'],
+          correctIndex: 2,
+          explanation: 'Chloroplasts convert light energy into chemical energy.'
+        },
+        {
+          id: 'q4',
+          text: 'A trait appears in every generation when it is:',
+          options: ['Recessive', 'Dominant', 'Codominant', 'Polygenic'],
+          correctIndex: 1,
+          explanation: 'Dominant traits can appear in every generation.'
+        }
+      ]
+    },
+
+    // High School: Grade 11 – English Literature & Composition (englit-q1)
+    'englit-q1': {
+      title: 'Literature & Composition Basics',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Which sentence contains a metaphor?',
+          options: [
+            'The sun is a golden coin in the sky.',
+            'The sun is like a golden coin.',
+            'The sun shines brightly.',
+            'It was sunny today.'
+          ],
+          correctIndex: 0,
+          explanation: 'A metaphor directly equates two things without “like” or “as.”'
+        },
+        {
+          id: 'q2',
+          text: 'The central idea or message of a text is its:',
+          options: ['Plot', 'Theme', 'Setting', 'Point of view'],
+          correctIndex: 1,
+          explanation: 'Theme is the underlying message or big idea.'
+        },
+        {
+          id: 'q3',
+          text: 'A strong thesis statement should:',
+          options: [
+            'Be vague and general.',
+            'State a clear claim and direction.',
+            'List every detail of the essay.',
+            'Be longer than five sentences.'
+          ],
+          correctIndex: 1,
+          explanation: 'A thesis clearly presents the claim and focus of the essay.'
+        },
+        {
+          id: 'q4',
+          text: 'An author’s tone refers to:',
+          options: ['The time and place', 'Word choice and imagery', 'Attitude toward the subject', 'The order of events'],
+          correctIndex: 2,
+          explanation: 'Tone is the author’s attitude conveyed through style.'
+        }
+      ]
+    },
+
+    // High School: Grade 12 – Social Studies/History (hist-q1)
+    'hist-q1': {
+      title: 'History & Civics Overview',
+      questions: [
+        {
+          id: 'q1',
+          text: 'Separation of powers divides government primarily into:',
+          options: ['Two branches', 'Three branches', 'Four branches', 'Many local councils'],
+          correctIndex: 1,
+          explanation: 'Legislative, Executive, and Judicial branches.'
+        },
+        {
+          id: 'q2',
+          text: 'A “primary source” is best defined as:',
+          options: [
+            'A textbook summary of past events',
+            'A modern historian’s analysis',
+            'An original document/artifact from the time',
+            'A fictional story inspired by history'
+          ],
+          correctIndex: 2,
+          explanation: 'Primary sources are original materials from the time studied.'
+        },
+        {
+          id: 'q3',
+          text: 'World War II began in Europe in:',
+          options: ['1914', '1918', '1939', '1945'],
+          correctIndex: 2,
+          explanation: 'Germany invaded Poland in 1939.'
+        },
+        {
+          id: 'q4',
+          text: 'Civic participation includes:',
+          options: ['Voting and community service', 'Only watching the news', 'Travel abroad', 'Avoiding public issues'],
+          correctIndex: 0,
+          explanation: 'Voting, volunteering, and engaging in public life are core civic acts.'
         }
       ]
     }
@@ -564,7 +724,7 @@ export const QUIZ_CONTENT = {
       ]
     },
 
-    // Grados Superiores: Álgebra - Conceptos básicos (alg-q1)
+    // Grados 6–8: Álgebra - Conceptos básicos (alg-q1)
     'alg-q1': {
       title: 'Conceptos básicos de Álgebra',
       questions: [
@@ -588,6 +748,166 @@ export const QUIZ_CONTENT = {
           options: ['x^2 + 5x + 6', 'x^2 + 6x + 5', 'x^2 + 3x + 2', 'x^2 + 2x + 3'],
           correctIndex: 0,
           explanation: '(x+3)(x+2)=x^2+2x+3x+6=x^2+5x+6.'
+        }
+      ]
+    },
+
+    // Bachillerato: Grado 9 – Geometría (geo-q1)
+    'geo-q1': {
+      title: 'Fundamentos de Geometría',
+      questions: [
+        {
+          id: 'q1',
+          text: 'La suma de los ángulos interiores de un triángulo es:',
+          options: ['90°', '120°', '180°', '360°'],
+          correctIndex: 2,
+          explanation: 'Todos los triángulos suman 180° en sus ángulos internos.'
+        },
+        {
+          id: 'q2',
+          text: '¿Cuál fórmula da la circunferencia de un círculo?',
+          options: ['C = πr^2', 'C = 2πr', 'C = πd^2', 'C = r^2/2'],
+          correctIndex: 1,
+          explanation: 'La circunferencia C es 2πr (o πd).'
+        },
+        {
+          id: 'q3',
+          text: '¿Cuál es una terna pitagórica?',
+          options: ['2, 3, 4', '3, 4, 5', '4, 5, 7', '5, 6, 7'],
+          correctIndex: 1,
+          explanation: '3^2 + 4^2 = 25 = 5^2.'
+        },
+        {
+          id: 'q4',
+          text: 'Si dos líneas son perpendiculares, el ángulo entre ellas es:',
+          options: ['45°', '60°', '90°', '180°'],
+          correctIndex: 2,
+          explanation: 'Líneas perpendiculares forman un ángulo recto (90°).'
+        }
+      ]
+    },
+
+    // Bachillerato: Grado 10 – Biología (bio-q1)
+    'bio-q1': {
+      title: 'Introducción a la Biología',
+      questions: [
+        {
+          id: 'q1',
+          text: '¿Cuál NO es parte de la teoría celular?',
+          options: [
+            'Todos los seres vivos están hechos de células.',
+            'Las células son la unidad básica de la vida.',
+            'Todas las células provienen de células preexistentes.',
+            'Las células solo se encuentran en animales.'
+          ],
+          correctIndex: 3,
+          explanation: 'Las células están en todos los organismos vivos, plantas y animales.'
+        },
+        {
+          id: 'q2',
+          text: 'Los pares de bases del ADN son:',
+          options: ['A–G y C–T', 'A–T y C–G', 'A–C y T–G', 'A–U y C–G'],
+          correctIndex: 1,
+          explanation: 'En ADN, adenina con timina; citosina con guanina.'
+        },
+        {
+          id: 'q3',
+          text: 'La fotosíntesis ocurre principalmente en:',
+          options: ['Mitocondrias', 'Núcleo', 'Cloroplastos', 'Ribosomas'],
+          correctIndex: 2,
+          explanation: 'Los cloroplastos convierten energía lumínica en química.'
+        },
+        {
+          id: 'q4',
+          text: 'Un rasgo aparece en cada generación cuando es:',
+          options: ['Recesivo', 'Dominante', 'Codominante', 'Poligénico'],
+          correctIndex: 1,
+          explanation: 'Los rasgos dominantes pueden aparecer en cada generación.'
+        }
+      ]
+    },
+
+    // Bachillerato: Grado 11 – Literatura y Composición (englit-q1)
+    'englit-q1': {
+      title: 'Conceptos de Literatura y Composición',
+      questions: [
+        {
+          id: 'q1',
+          text: '¿Cuál oración contiene una metáfora?',
+          options: [
+            'El sol es una moneda de oro en el cielo.',
+            'El sol es como una moneda de oro.',
+            'El sol brilla intensamente.',
+            'Hoy estuvo soleado.'
+          ],
+          correctIndex: 0,
+          explanation: 'La metáfora iguala dos cosas sin “como”.'
+        },
+        {
+          id: 'q2',
+          text: 'La idea central o mensaje de un texto es su:',
+          options: ['Trama', 'Tema', 'Ambientación', 'Punto de vista'],
+          correctIndex: 1,
+          explanation: 'El tema es el mensaje o idea principal.'
+        },
+        {
+          id: 'q3',
+          text: 'Una buena tesis debe:',
+          options: [
+            'Ser vaga y general.',
+            'Plantear una afirmación clara y dirección.',
+            'Enumerar todos los detalles del ensayo.',
+            'Tener más de cinco oraciones.'
+          ],
+          correctIndex: 1,
+          explanation: 'La tesis presenta con claridad el enfoque del escrito.'
+        },
+        {
+          id: 'q4',
+          text: 'El “tono” del autor se refiere a:',
+          options: ['Tiempo y lugar', 'Dicción e imágenes', 'Actitud hacia el tema', 'Orden de los eventos'],
+          correctIndex: 2,
+          explanation: 'El tono es la actitud del autor expresada en su estilo.'
+        }
+      ]
+    },
+
+    // Bachillerato: Grado 12 – Estudios Sociales/Historia (hist-q1)
+    'hist-q1': {
+      title: 'Resumen de Historia y Cívica',
+      questions: [
+        {
+          id: 'q1',
+          text: 'La separación de poderes divide al gobierno principalmente en:',
+          options: ['Dos poderes', 'Tres poderes', 'Cuatro poderes', 'Muchos consejos locales'],
+          correctIndex: 1,
+          explanation: 'Poder Legislativo, Ejecutivo y Judicial.'
+        },
+        {
+          id: 'q2',
+          text: 'Una “fuente primaria” se define como:',
+          options: [
+            'Un resumen en un libro de texto',
+            'El análisis de un historiador moderno',
+            'Documento/objeto original de la época',
+            'Un relato ficticio inspirado en la historia'
+          ],
+          correctIndex: 2,
+          explanation: 'Las fuentes primarias son materiales originales del periodo.'
+        },
+        {
+          id: 'q3',
+          text: 'La Segunda Guerra Mundial comenzó en Europa en:',
+          options: ['1914', '1918', '1939', '1945'],
+          correctIndex: 2,
+          explanation: 'Alemania invadió Polonia en 1939.'
+        },
+        {
+          id: 'q4',
+          text: 'La participación cívica incluye:',
+          options: ['Votar y servicio comunitario', 'Solo ver noticias', 'Viajar al extranjero', 'Evitar los asuntos públicos'],
+          correctIndex: 0,
+          explanation: 'Votar, voluntariado y participación pública son actos cívicos.'
         }
       ]
     }
