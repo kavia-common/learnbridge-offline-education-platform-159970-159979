@@ -12,7 +12,13 @@ export default function Lesson() {
   const module = useMemo(() => {
     const language = user.language || 'en';
     const ageGroup = user.ageGroup || 'child';
-    const gradeLevel = user.gradeLevel || (ageGroup === 'adult' ? 'adult' : '1');
+
+    // Normalize grade level for reliable filtering
+    const gradeLevelRaw = user.gradeLevel ?? (ageGroup === 'adult' ? 'adult' : '1');
+    const gradeLevel = ageGroup === 'adult'
+      ? 'adult'
+      : String(Number.isFinite(parseInt(gradeLevelRaw, 10)) ? parseInt(gradeLevelRaw, 10) : 1);
+
     const base = MODULES[language]?.[ageGroup] || [];
     const list = ageGroup === 'child'
       ? base.filter(m => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))

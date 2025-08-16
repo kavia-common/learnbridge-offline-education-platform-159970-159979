@@ -12,11 +12,30 @@ export default function Modules() {
 
   const language = user.language || 'en';
   const ageGroup = user.ageGroup || 'child';
-  const gradeLevel = user.gradeLevel || (ageGroup === 'adult' ? 'adult' : 'k');
+
+  // Normalize grade level: '1'..'12' for child, or 'adult' for adult content
+  const gradeLevelRaw = user.gradeLevel ?? (ageGroup === 'adult' ? 'adult' : '1');
+  const gradeLevel = ageGroup === 'adult'
+    ? 'adult'
+    : String(Number.isFinite(parseInt(gradeLevelRaw, 10)) ? parseInt(gradeLevelRaw, 10) : 1);
+
   const base = MODULES[language]?.[ageGroup] || [];
-  const modules = ageGroup === 'child'
-    ? base.filter(m => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))
+
+  // Primary filter by grade when age group is child
+  let modules = ageGroup === 'child'
+    ? base.filter((m) => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))
     : base;
+
+  // Fallback: if nothing matched (e.g., legacy/edge cases), show any upper-grade modules for 9–12
+  if (ageGroup === 'child' && modules.length === 0) {
+    const upperSet = ['9', '10', '11', '12'];
+    const upper = base.filter(
+      (m) => Array.isArray(m.gradeLevels) && m.gradeLevels.some((g) => upperSet.includes(String(g)))
+    );
+    if (upper.length > 0) {
+      modules = upper;
+    }
+  }
 
   return (
     <div className="grid" style={{ gap: 12 }}>

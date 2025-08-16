@@ -19,7 +19,13 @@ export default function Quiz() {
   const language = user?.language || 'en';
   const module = useMemo(() => {
     const ageGroup = user?.ageGroup || 'child';
-    const gradeLevel = user?.gradeLevel || (ageGroup === 'adult' ? 'adult' : '1');
+
+    // Normalize grade level similar to other pages to ensure consistent filtering
+    const gradeLevelRaw = user?.gradeLevel ?? (ageGroup === 'adult' ? 'adult' : '1');
+    const gradeLevel = ageGroup === 'adult'
+      ? 'adult'
+      : String(Number.isFinite(parseInt(gradeLevelRaw, 10)) ? parseInt(gradeLevelRaw, 10) : 1);
+
     const base = MODULES[language]?.[ageGroup] || [];
     const list = ageGroup === 'child'
       ? base.filter(m => !m.gradeLevels || m.gradeLevels.includes(gradeLevel))
